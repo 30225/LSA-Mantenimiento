@@ -1,0 +1,94 @@
+body {
+    background-color: #f3f4f6b7;
+    font-family: 'Inter', sans-serif;
+}
+
+.navbar{
+    position: sticky;  /* Hace que el elemento sea pegajoso */
+    top: 0;            /* El valor de 'top' define a partir de qué punto se pega */
+    z-index: 1000;     /* Asegura que esté por encima de otros elementos */
+    /* Otros estilos que necesites para el diseño */
+}
+
+.scroll-container-horizontal {
+    width:100%;        /* Ancho del contenedor */
+    overflow-x: scroll;  /* Habilita el scroll horizontal */
+    border-bottom: 1px solid #ccc; /* Borde para visualizar mejor el área */
+    border-top: 1px solid #ccc;
+}
+
+.navbarvertical .nav-link {
+    white-space: nowrap; /* Asegura que el texto no se corte en varias líneas */
+    color: #052647;;
+    font-weight: bold;
+
+}
+
+.section-title {
+    color:  #0c377f !important; /* Azul */
+    font-weight: bold; /* Negrita */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-label {
+    font-weight: bold; 
+    display: block;
+}
+
+.form-control {
+    margin-bottom: 15px;
+}
+
+.nav-link{
+    color: #0c377f; /* Azul */
+    font-weight: bold;
+    margin: 0;
+}
+
+.col{
+    padding-top: 30px;
+    flex: 0 0 75%;
+    max-width: 81%;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+    align-self: center;
+    align-content: center !important;
+    margin: 0 auto; /* Centra la tabla horizontalmente */
+}
+
+.btn-primary {
+    background-color: rgb(33, 33, 99);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none; /* Evita subrayado en el enlace si lo hubiera */
+}
+
+.btn-primary:hover {
+    background-color:rgb(13, 2, 63) ;
+    color: inherit; /* Esto asegura que el link no cambie de color */
+    text-decoration: none; /* Evita subrayado en el enlace si lo hubiera */
+    color: white;
+}
+
+#navbarContent{
+    padding-top: 40px;
+}
+
+
+a{
+    color: inherit; /* Esto asegura que el link no cambie de color */
+    text-decoration: none; /* Evita subrayado en el enlace si lo hubiera */
+    color: white;
+}
+
+
+
+
+  
+   

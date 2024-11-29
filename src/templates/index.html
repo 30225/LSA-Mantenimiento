@@ -1,0 +1,46 @@
+{% extends './base.html' %}
+
+
+{% block nombre %}LSA{% endblock %}
+{% block body %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/desglose.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fondo.css') }}">
+    <div class="search-bar">
+        <input type="text" id="searchbox" placeholder="Buscar equipos">
+        <button id="buscarBtn"><i class="bi bi-search" style="font-size: 25px;" ></i></button>
+        <button id="nuevoEquipoBtn" class="nuevo-equipo-btn" onclick="window.location.href='{{ url_for('registro_generalidades') }}'">
+            Nuevo equipo
+        </button>        
+    </div>
+
+    <div id="resultados" class="grid-container">
+        {% for grupo in grupos %}
+        <div class="card" data-id="{{ grupo.id }}" data-type="grupo">
+            <!-- Mostrar imagen según el valor de numeracion -->
+            {% if grupo.numeracion == 200 %}
+                <img src="{{ url_for('static', filename='img/1.png') }}" alt="Planta de Propulsión">
+            {% elif grupo.numeracion == 300 %}
+                <img src="{{ url_for('static', filename='img/2.png') }}" alt="Planta Eléctrica">
+            {% elif grupo.numeracion == 400 %}
+                <img src="{{ url_for('static', filename='img/3.png') }}" alt="Sistemas Auxiliares">
+            {% elif grupo.numeracion == 500 %}
+                <img src="{{ url_for('static', filename='img/4.png') }}" alt="Sistemas de Navegación">
+            {% elif grupo.numeracion == 600 %}
+                <img src="{{ url_for('static', filename='img/5.png') }}" alt="Sistemas de Armamento">
+            {% else %}
+                <img src="{{ url_for('static', filename='img/6.png') }}" alt="Imagen por defecto">
+            {% endif %}
+            
+            <!-- Mostrar número y nombre -->
+            <p class="grupo">{{ grupo.nombre }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    
+
+    <div id="volverBtn" class="hidden">
+        <button class="volverBtn">Volver</button>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/desglose.js') }}"></script>
+{% endblock %}
